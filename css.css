@@ -1,0 +1,98 @@
+.green-button{
+    position: relative;
+    text-align: center;
+    outline: none;
+    border: none;
+    background: #1d9650;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 16px;
+    height:64px;
+    width: 185px;
+    overflow: hidden;
+}
+.text{
+    position: absolute;
+    line-height:64px;
+    height:64px;
+    width: 185px;
+    top:0;
+    left: 0;
+    z-index:10;
+}
+.text:after{
+    content: ' ';
+    width: 18px;
+    height: 18px;
+    background: url("https://cdn2.iconfinder.com/data/icons/bwpx/icons/symbol_check.gif");
+    display: block;
+    margin: 0 auto;
+}
+.bg-text{
+    position: absolute;
+    top:0;
+    left: 0;
+    background: #0e7138;
+    height:64px;
+    width: 0;
+    /*-webkit-transition: linear 0.3s;*/
+    /*transition: linear 0.3s;*/
+}
+
+
+
+#second-button{
+    display: block;
+    -webkit-transition: -webkit-transform 0.2s;
+    transition: transform 0.2s;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    /*-webkit-transform: rotateX(45deg);*/
+    /*transform: rotateX(45deg);*/
+    overflow: visible;
+    position: relative;
+    -webkit-perspective: 900px;
+    perspective: 900px;
+    /*background: transparent;*/
+}
+#second-button .bg-text{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 185px;
+    height: 20px;
+    box-shadow: 0 -1px 0 #148544;
+    -webkit-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
+    -webkit-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+    background: #148544;
+    -webkit-perspective: 900px;
+    perspective: 900px;
+}
+#second-button .bg-text-rotate{
+    position: absolute;
+    top:0;
+    left: 0;
+    background: #0e7138;
+    height:20px;
+    width: 0;
+    -webkit-perspective: 900px;
+    perspective: 900px;
+}
+
+#second-button .text_arrow {
+    width: 18px;
+    height: 18px;
+    background: url(https://cdn2.iconfinder.com/data/icons/bwpx/icons/symbol_check.gif);
+    display: none;
+    margin: 0 auto;
+    position: absolute;
+    top: 23px;
+    right: 25px;
+}
+#second-button .text:after{
+    display: none;
+}
+
