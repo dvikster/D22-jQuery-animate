@@ -5,10 +5,7 @@ function dettectMobileBowser() {
         // c использованием парсера bowser.min.js - легко можно управлять данными userAgent https://github.com/lancedikson/bowser
     if((bowser.mobile == true) || (bowser.tablet == true)){
         $('body').addClass('mobile');
-
-        $('.tel_wrapp a').on('click', function () {
-            $(this).attr( 'href', 'tel:+380670000000') ;
-        })
+        $('.tel_wrapp a').attr( 'href', 'tel:+380670000000') ;
     }
     else {
         $('body').addClass('desktop')
@@ -18,17 +15,14 @@ function dettectMobileBowser() {
     }
     console.log(navigator.userAgent);
 }
-dettectMobileBowser();
+// dettectMobileBowser();
 
     function dettectMobile() {
         var a= navigator.userAgent;
-        // c определением вхождения в слова Mobile
+        // c определением вхождения слова Mobile
         if(a.indexOf('Mobile') != -1){
             $('body').addClass('mobile1');
-
-            $('.tel_wrapp a').on('click', function () {
-                $(this).attr( 'href', 'tel:+380670000000') ;
-            })
+            $('.tel_wrapp a').attr( 'href', 'tel:+380670000000') ;
         }
         else {
             $('body').addClass('desktop1')
