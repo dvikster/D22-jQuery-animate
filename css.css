@@ -96,3 +96,98 @@
     display: none;
 }
 
+/*---------------------------------*/
+#third-button{
+    display: block;
+    -webkit-transition: -webkit-transform 0.2s;
+    transition: transform 0.2s;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    overflow: visible;
+    position: relative;
+}
+#third-button .bg-text{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 185px;
+    height: 20px;
+    box-shadow: 0 -1px 0 #148544;
+    -webkit-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
+    -webkit-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+    background: #148544;
+}
+#third-button .bg-text-rotate{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #0e7138;
+    height:20px;
+    width: 0;
+}
+
+#third-button .text_arrow {
+    width: 18px;
+    height: 18px;
+    background: url(https://cdn2.iconfinder.com/data/icons/bwpx/icons/symbol_check.gif);
+    display: none;
+    margin: 0 auto;
+    position: absolute;
+    top: 23px;
+    right: 25px;
+}
+#third-button .text:after{
+    display: none;
+}
+/*----------------------------*/
+
+
+.tel_wrapp {
+    height: 40px;
+    line-height: 40px;
+    /*border: 1px solid;*/
+}
+.tel_wrapp img{
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px;
+}
+.tel_wrapp a{
+    text-decoration: none;
+    color: #77b3d4;
+}
+
+.pulse {
+    overflow: initial;
+    position: relative;
+}
+.pulse::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: -6px;
+    left: 5px;
+    background-color: #77b3d4;
+    border-radius: 50%;
+    transition: opacity .3s, transform .3s;
+    animation: pulse-animation 1.5s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+    z-index: -1
+}
+
+@keyframes pulse-animation  {
+    0% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: scale(1.5);
+        transform: scale(1.5)
+    }
+}
+

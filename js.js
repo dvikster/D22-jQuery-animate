@@ -1,4 +1,44 @@
+
 $(document).ready(function(){
+
+function dettectMobileBowser() {
+        // c использованием парсера bowser.min.js - легко можно управлять данными userAgent https://github.com/lancedikson/bowser
+    if((bowser.mobile == true) || (bowser.tablet == true)){
+        $('body').addClass('mobile');
+
+        $('.tel_wrapp a').on('click', function () {
+            $(this).attr( 'href', 'tel:+380670000000') ;
+        })
+    }
+    else {
+        $('body').addClass('desktop')
+        $('.tel_wrapp a').on('click', function () {
+            alert('Здесь будет окно для ввода телефона');
+        })
+    }
+    console.log(navigator.userAgent);
+}
+dettectMobileBowser();
+
+    function dettectMobile() {
+        var a= navigator.userAgent;
+        // c определением вхождения в слова Mobile
+        if(a.indexOf('Mobile') != -1){
+            $('body').addClass('mobile1');
+
+            $('.tel_wrapp a').on('click', function () {
+                $(this).attr( 'href', 'tel:+380670000000') ;
+            })
+        }
+        else {
+            $('body').addClass('desktop1')
+            $('.tel_wrapp a').on('click', function () {
+                alert('Здесь будет окно для ввода телефона');
+            })
+        }
+        console.log(navigator.userAgent);
+    }
+    dettectMobile();
 
     $('#first-button').on('click', function () {
         $('#first-button .bg-text').animate({
@@ -54,4 +94,38 @@ $(document).ready(function(){
             $('.bg-text-rotate').css('width', '0');
         });
 
+
+    $('#third-button').on('click', function () {
+        $({deg: 0}).animate({deg: 90}, {
+            step: function (now, fy) {
+                $("#third-button").css({
+                    transform: "rotateX(" + now + "deg)",
+                });
+            }
+        });
+
+        setTimeout(bgTextRotateThird, 1000);
+
+        function bgTextRotateThird(){
+            $('#third-button .bg-text-rotate').animate({
+                'width': '185px'
+            }, 2000, OkButtonAfterThird)
+        }
+
+        function OkButtonAfterThird() {
+            $('#third-button .text_arrow').css('display', 'block');
+            $({deg: 90}).animate({deg: 0}, {
+                step: function (now, fy) {
+                    $("#third-button").css({
+                        transform: "rotateX(" + now + "deg)"
+                    });
+                }}
+            );
+            setTimeout(OkButtonNoneThird, 1000);
+        }
+
+        function OkButtonNoneThird(){
+            $('#third-button .text_arrow').css('display', 'none')};
+        $('#third-button .bg-text-rotate').css('width', '0');
+    });
 });
