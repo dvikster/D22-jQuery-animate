@@ -34,7 +34,7 @@ $(document).ready(function(){
         function bgTextRotate(){
             $('.bg-text-rotate').animate({
                 'width': '185px'
-            }, 1000, OkButtonAfter)
+            }, 2000, OkButtonAfter)
         }
 
         function OkButtonAfter() {
@@ -50,8 +50,8 @@ $(document).ready(function(){
         }
 
         function OkButtonNone(){
-            $('#second-button .text_arrow').css('display', 'none')}
+            $('#second-button .text_arrow').css('display', 'none')};
+            $('.bg-text-rotate').css('width', '0');
         });
-
 
 });
